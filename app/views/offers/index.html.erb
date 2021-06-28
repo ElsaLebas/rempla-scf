@@ -1,0 +1,14 @@
+<h1> Here all the offers </h1>
+
+<ul>
+  <% @offers.each do |offer| %>
+  <li>
+  <%= link_to offer.address, offer_path(offer) %>
+  <%= link_to '| delete |', offer_path(offer), method: :delete, data: {confirm: "Are you sure ?"}  %>
+  <%= link_to '| update |', edit_offer_path(offer) %>
+
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back to home page', root_path %>
